@@ -1,0 +1,34 @@
+<div [ngClass]="'sign-container'">
+    <mat-card [ngClass]="'card'">
+        <h1 class="sign-heading">Signin</h1>
+        <form [formGroup]="signInForm" (ngSubmit)="onSubmit()" class="form-content">
+            <div class="container-items-display">
+                <label for="email">Email:</label>
+                <input #email formControlName="email" id="email" name="email" type="text" class="form-control">
+                <div *ngIf="signInForm.invalid && (signInForm.dirty || signInForm.touched) && signInForm.controls['email'].touched" style="color: red; margin-top: 10px;">
+
+                    <div *ngIf="signInForm.controls['email'].errors?.['required']">
+                        Email is required.
+                    </div>
+                    <div *ngIf="signInForm.controls['email'].errors?.['minlength']">
+                        Email must be at least 10 characters long.
+                    </div>
+                </div>
+            </div>
+            <div [ngClass]="'password-container container-items-display'">
+                <label for="password">Password:</label>
+                <input #password1 formControlName="password" id="password" name="password" type="password" class="form-control">
+                <div *ngIf="signInForm.invalid && (signInForm.dirty || signInForm.touched)" style="color: red; margin-top: 10px;">
+
+                    <div *ngIf="signInForm.controls['password'].errors?.['required'] && signInForm.controls['password'].touched">
+                        Password is required.
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="signin-button button-items" mat-raised-button color="warn">
+                <span>Signin</span>
+                <mat-icon>input</mat-icon>
+            </button>
+        </form>
+    </mat-card>
+</div>

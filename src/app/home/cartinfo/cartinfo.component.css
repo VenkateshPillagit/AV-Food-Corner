@@ -1,0 +1,9 @@
+.mat-mdc-card{
+    background-color: white;
+    padding: 1.5rem;
+}
+img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 10px;
+}

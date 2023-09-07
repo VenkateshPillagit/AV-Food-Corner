@@ -1,0 +1,29 @@
+<app-search (emitterSearchValue)="searchValue=$event" ></app-search>
+<div class="list-container">
+    <mat-card class="example-card" *ngFor="let food of foods">
+        <mat-card-header class=".mat-card-header1">
+            <mat-card-title>{{food.name}}</mat-card-title>
+        </mat-card-header>
+        <a routerLink="/products/food/{{food.id}}">
+            <div class="image-container">
+                <img class="card-image" mat-card-sm-image src={{food.imageUrl}} alt="not available" />
+            </div>
+        </a>
+        <mat-card-content>{{food.name}}</mat-card-content>
+        <mat-card-actions>
+            <button mat-icon-button class="example-icon">
+                <mat-icon style="color: red;">favorite_border</mat-icon>
+            </button>
+            <mat-icon style="color: red;">access_alarm</mat-icon>
+            <span style="margin-right: 8px; margin-left: 8px;">{{food.cookTime}}</span>
+            <rating [readonly]="true" style="color: #fcba03;font-size: 30px;" ngModel = {{food.stars}} [max]="max" />
+        </mat-card-actions>
+        <mat-card-footer>
+            
+        </mat-card-footer>
+    </mat-card>
+</div>
+<div *ngIf="foods?.length === 0" style="display: flex; justify-content: center; align-items: center;">
+    <!-- have to pass data from child to parent to get searchValue -->
+    Item is Not found!
+</div>

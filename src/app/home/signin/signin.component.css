@@ -1,0 +1,46 @@
+.sign-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.card{
+    background-color: white;
+    padding: 3rem;
+}
+
+.form-content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.sign-heading{
+    text-align: center;
+}
+
+.signin-button{
+    width: 100%;
+    height: 3rem;
+    margin-top: 1rem;
+    border-radius: 20px;
+}
+
+.button-items{
+    display: flex;
+    flex-direction: row;
+}
+
+.container-items-display{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    width: 20rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+}

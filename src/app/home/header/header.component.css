@@ -1,0 +1,15 @@
+.header{
+    background-color: #f44336;
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+}
+
+.content-display{
+    justify-content: space-between;
+}
+
+.header-title-menu-display{
+    display: flex;
+    align-items: center;
+}
